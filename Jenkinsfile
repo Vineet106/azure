@@ -22,9 +22,9 @@ node {
       def resourceGroup = 'workshop'
       def webAppName = 'vineet106'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'holyhell', passwordVariable: 'e9f8d7d4-f111-4f5e-9bb4-58c1347306ce', usernameVariable: '84dcc845-9575-4949-bb98-eb6ec1c2abb1')]) {
+      withCredentials([usernamePassword(credentialsId: 'holyhell', passwordVariable: 'Vux8Q~p5CwlRtpppZtxu5LMPQ~-yABRTAKr-Ab5-', usernameVariable: '84dcc845-9575-4949-bb98-eb6ec1c2abb1')]) {
        sh '''
-          az login --service-principal -u 84dcc845-9575-4949-bb98-eb6ec1c2abb1 -p e9f8d7d4-f111-4f5e-9bb4-58c1347306ce -t 0b21fbb-67eb-42f5-8bda-d85b82dc64ee
+          az login --service-principal -u 84dcc845-9575-4949-bb98-eb6ec1c2abb1 -p Vux8Q~p5CwlRtpppZtxu5LMPQ~-yABRTAKr-Ab5- -t 0b21fbb-67eb-42f5-8bda-d85b82dc64ee
           az account set -s 5f397c40-6821-42b8-ac8d-eae44f88c577
         '''
       }

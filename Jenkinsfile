@@ -8,8 +8,8 @@ def getFtpPublishProfile(def publishProfilesJson) {
 }
 
 node {
-  withEnv(['AZURE_SUBSCRIPTION_ID=<subscription_id>',
-        'AZURE_TENANT_ID=<tenant_id>']) {
+  withEnv(['AZURE_SUBSCRIPTION_ID=5f397c40-6821-42b8-ac8d-eae44f88c577',
+        'AZURE_TENANT_ID=80b21fbb-67eb-42f5-8bda-d85b82dc64ee']) {
     stage('init') {
       checkout scm
     }
@@ -19,13 +19,13 @@ node {
     }
   
     stage('deploy') {
-      def resourceGroup = '<resource_group>'
-      def webAppName = '<app_name>'
+      def resourceGroup = 'workshop'
+      def webAppName = 'vineet106'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: '<service_princial>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+      withCredentials([usernamePassword(credentialsId: 'holyhell', passwordVariable: 'e9f8d7d4-f111-4f5e-9bb4-58c1347306ce', usernameVariable: '84dcc845-9575-4949-bb98-eb6ec1c2abb1')]) {
        sh '''
-          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
-          az account set -s $AZURE_SUBSCRIPTION_ID
+          az login --service-principal -u $84dcc845-9575-4949-bb98-eb6ec1c2abb1 -p $e9f8d7d4-f111-4f5e-9bb4-58c1347306ce -t $0b21fbb-67eb-42f5-8bda-d85b82dc64ee
+          az account set -s $5f397c40-6821-42b8-ac8d-eae44f88c577
         '''
       }
       // get publish settings
